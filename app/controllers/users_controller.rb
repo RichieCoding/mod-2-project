@@ -14,6 +14,7 @@ class UsersController < ApplicationController
   end
 
   def create
+
     @user = User.create(user_params)
     if @user.valid?
       redirect_to user_path(@user)
@@ -26,7 +27,7 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:name, :username, :password, :age, :location, :bio)
+    params.require(:user).permit(:name, :age, :location, :bio, :username, :password)
   end
 
 
