@@ -1,0 +1,32 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="css/create_new.css">
+  <title>Create Profile</title>
+</head>
+<body id="new-body">
+  <header id="new-header">
+    <h1 id="new-title">oKStupid</h1>
+  </header>
+  <main id="new-main">
+      <%= form_for @user do |f| %>
+        <%= f.label :name %> <br>
+        <%= f.text_field :name %> <br>
+        <%= f.label :age %> <br>
+        <%= f.text_field :age %> <br>
+        <%= f.label :location %> <br>
+        <%= f.text_field :location %> <br>
+        <%= f.label :bio %> <br>
+        <%= f.text_area :bio %> <br>
+        <%= f.label :username %> <br>
+        <%= f.text_field :username %> <br>
+        <%= f.label :password %> <br>
+        <%= f.password_field :password %> <br>
+        <%= f.submit %>
+        <% end %>
+  </main>
+</body>
+</html>
+

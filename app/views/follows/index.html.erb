@@ -1,0 +1,5 @@
+<h1> All Relationship</h1>
+
+<% @follows.each do |follow| %>
+  <%= "Follower: #{follow.follower.name} - Followee: #{follow.followee.name}" %>
+<% end %>

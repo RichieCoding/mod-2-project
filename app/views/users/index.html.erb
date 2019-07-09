@@ -1,0 +1,33 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Browse</title>
+  <link rel="stylesheet" href="css/browse.css">
+</head>
+<body id="browse-body">
+    <header id="browse-header">
+        <h1 id="browse-title">Browse</h1>
+        <nav>
+          <ul>
+            <li><a href="#" id="match">Match Me</a></li>
+            <li><%= link_to "Profile", user_path(@current_user) %></li>
+            <li><%= link_to "Browse", users_path %></li>
+            <li><%= link_to "Log Out", "/login", method: :delete %></li>
+          </ul>
+        </nav>
+      </header>
+      <main id="browse-main">
+        <% @users.each do |user|%>
+          <div class="profile-dash">
+            <div class="icon">
+              <%= link_to image_tag 'rick.png', class:"browse-profile-pic" %>
+              <p><%= user.name %></p>
+              <p>Interstellar</p>
+            </div>
+          </div>
+        <%end%>
+      </main>
+</body>
+</html>

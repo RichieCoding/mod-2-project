@@ -1,0 +1,82 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/*********** HEADER ************/
+
+#browse-body header {
+  background: rgb(223,155,155);
+  background: linear-gradient(160deg, rgba(223,155,155,0.9766281512605042) 0%, rgba(255,122,114,1) 60%, rgba(250,88,78,1) 95%);
+}
+
+#browse-body h1 {
+  font-size: 5em;
+  text-align: center;
+  margin-bottom: 20px;
+  color: linear-gradient(160deg, rgba(223,155,155,0.9766281512605042) 0%, rgba(255,122,114,1) 60%, rgba(250,88,78,1) 95%);
+  background: -webkit-linear-gradient(rgb(74, 94, 184), rgb(42, 64, 158));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+
+#browse-body nav {
+  text-align: center;
+}
+
+#browse-body ul li {
+  display: inline-block;
+}
+
+
+ul li a {
+  padding: 10px 10px 5px;
+  text-decoration:  none;
+  font-size: 20px;
+  color: white
+}
+
+#match:hover {
+  color:rgb(163, 24, 24);
+  -webkit-transform: scale(1.3);
+  -ms-transform: scale(1.3);
+  transform: scale(.3);
+}
+
+ul li a:hover {
+  color: rgb(66, 87, 184);
+}
+
+/********** MAIN ***********/
+
+#browse-main {
+  margin: 0 auto;
+  width: 70%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+}
+
+.profile-dash {
+  margin: 3em 2.5em 2em;
+  /* border: 1px black solid; */
+  
+}
+
+.profile-dash p {
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+.browse-profile-pic {
+  width: 150px;
+  border-radius: 180%;
+  background: rgb(223,155,155);
+  margin-bottom: 15px;
+}
+
+.icon {
+  display: inline-block;
+}

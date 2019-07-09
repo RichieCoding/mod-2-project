@@ -1,0 +1,29 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <%= stylesheet_link_tag "main"%>
+  <title>Find Your Love</title>
+</head>
+<body id="login-body">
+  <header>
+    <h1 id="title">oKStupid</h1>
+  </header>
+  <main>
+    <div id="form">
+      <%= form_tag "/login" do |f| %>
+        <label>Username</label><br>
+        <%= text_field_tag :username %><br>
+        <label>Password</label><br>
+        <%= password_field_tag :password %><br>
+        <%= submit_tag "Log In" %><br>
+        <%= link_to "Create Profile", new_user_path %>
+      <% end %>
+    </div>
+    
+  </main>
+  
+</body>
+</html>
+

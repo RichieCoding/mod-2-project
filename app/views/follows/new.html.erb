@@ -1,0 +1,9 @@
+<h1> Create a new Relationship </h1>
+
+<%= form_for @follow do |f| %>
+  <%= f.label :follower %>
+  <%= f.collection_select :follower_id, User.all, :id, :name %>
+  <%= f.label :followee %>
+  <%= f.collection_select :followee_id, User.all, :id, :name %>
+  <%= f.submit %>
+<% end %>

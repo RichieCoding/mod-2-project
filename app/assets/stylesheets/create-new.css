@@ -1,0 +1,36 @@
+#new-body {
+  text-align: center;
+  background: linear-gradient(160deg, rgba(223,155,155,0.9766281512605042) 0%, rgba(255,122,114,1) 60%, rgba(250,88,78,1) 95%);
+  height: 100vh;
+}
+
+#new-body input {
+  padding: 5px;
+  width: 25em;
+  margin-top: 10px;
+  margin-bottom: 1em;
+  outline: none;
+  
+}
+
+#new-main label {
+  color:  rgb(74, 94, 184);
+  
+}
+
+#new-main textarea {
+  height: 6em;;
+  width: 25em;
+  outline: none;
+}
+
+#new-title {
+  font-size: 5em;
+  text-align: center;
+  margin-bottom: 70px;
+  color: linear-gradient(160deg, rgba(223,155,155,0.9766281512605042) 0%, rgba(255,122,114,1) 60%, rgba(250,88,78,1) 95%);
+  background: -webkit-linear-gradient(rgb(74, 94, 184), rgb(42, 64, 158));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+

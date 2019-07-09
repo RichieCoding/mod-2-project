@@ -1,0 +1,44 @@
+#login-body {
+  background: linear-gradient(160deg, rgba(223,155,155,0.9766281512605042) 0%, rgba(255,122,114,1) 60%, rgba(250,88,78,1) 95%);
+  background-repeat: no-repeat;
+  height: 100vh;
+}
+
+a {
+  text-decoration: none;
+}
+
+#title {
+  font-size: 100px;
+  color: rgb(66, 87, 184);
+  text-align: center;
+  margin-bottom: 1.5em
+}
+
+
+#form {
+  text-align: center;
+  color: white;
+  padding-top: 10px;
+  font-size: 1.3em;
+  
+}
+
+input {
+  margin: 10px 0 30px 0;
+  padding: .3em;
+}
+
+.hello {
+  margin-bottom: 10px;
+}
+
+#create {
+  color: white;
+  font-size: .8em;
+}
+
+#create:hover {
+  color: rgb(66, 87, 184);
+}
+
