@@ -15,9 +15,6 @@ class ApplicationController < ActionController::Base
       return redirect_to login_path 
     end 
   end 
-
-
-
-
+  
   
 end
