@@ -12,6 +12,8 @@
   </header>
   <main id="new-main">
       <%= form_for @user do |f| %>
+        <%= f.label "Profile Photo" %> <br>
+        <%= f.file_field :picture %> <br>
         <%= f.label :name %> <br>
         <%= f.text_field :name %> <br>
         <%= f.label :age %> <br>
