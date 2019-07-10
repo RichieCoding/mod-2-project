@@ -12,6 +12,7 @@
     <nav>
       <ul>
         <li><a href="#" id="match">Match Me</a></li>
+        <li><%= link_to "Inbox", conversations_path %></li>
         <li><%= link_to "Profile", user_path(@current_user) %></li>
         <li><%= link_to "Browse", users_path %></li>
         <li><%= link_to "Log Out", "/login", method: :delete %></li>
@@ -29,6 +30,12 @@
         <% if user_path(@user) != user_path(@current_user)%>
           <div id="button-div">
             <button id="follow-button"> Follow </button>
+          </div>
+        <% end %>
+        <% if user_path(@user) != user_path(@current_user)%>
+          <div class="message">
+            <h3 class="message-h3">Message Them!</h3>
+            <%= link_to 'Message me', conversations_path(sender_id: @current_user.id, recipient_id: @user.id), method: 'post'%>
           </div>
         <% end %>
     </div>  
@@ -56,6 +63,14 @@
       </div> <!-- End of following div -->
       <% end %>
     </div> <!-- End of profile-wrapper div -->
+
+        
+
+    
+  
+  </div>
+
+
   </main>
 </body>
 </html>
