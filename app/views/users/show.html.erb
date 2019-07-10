@@ -21,17 +21,41 @@
   <main id="profile-main">
     <div id="profile-container">
       <div id="profile-picture">
-        <%= image_tag 'rick.png', class:"profile-pic" %>
-        <div id="button-div">
-          <button id="follow-button"> Follow </button>
-        </div>
-      </div>  
+        <% if @user.picture.attached? %>
+          <img class:"profile-pic" src="<%=(url_for(@user.picture))%>">
+        <% else %>
+          <%= image_tag 'rick.png', class:"profile-pic" %>
+        <% end %>
+        <% if user_path(@user) != user_path(@current_user)%>
+          <div id="button-div">
+            <button id="follow-button"> Follow </button>
+          </div>
+        <% end %>
+    </div>  
       <div class="bio">
-        <p><b>Name:</b> <%= @current_user.name%></p>
-        <p><b>Age:</b> <%= @current_user.age%></p>
-        <p><b>Location:</b> <%= @current_user.location%></p>
-        <p><b>Bio:</b> <%= @current_user.bio%></p>
+        <p><b>Name:</b> <%= @user.name%></p>
+        <p><b>Age:</b> <%= @user.age%></p>
+        <p><b>Location:</b> <%= @user.location%></p>
+        <p><b>Bio:</b> <%= @user.bio%></p>
       </div>
+    </div> <!-- End of bio div -->
+    <hr>
+    <div id="profile-wrapper">
+      <% if user_path(@user) == user_path(@current_user)%>
+      <div class="profile-follows">
+        <h3 class="profile-h3">Followers</h3>
+        <% @user.followers.each do |follower| %>
+        <p><%= link_to follower.name, user_path(follower) %> </p>
+        <% end %>
+      </div> <!-- End of followers div -->
+      <div class="profile-follows">
+        <h3 class="profile-h3">Following</h3>
+        <% @user.followees.each do |followee| %>
+          <p><%= link_to followee.name, user_path(followee) %></p>
+        <% end %>
+      </div> <!-- End of following div -->
+      <% end %>
+    </div> <!-- End of profile-wrapper div -->
   </main>
 </body>
 </html>

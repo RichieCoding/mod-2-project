@@ -59,9 +59,11 @@
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-around;
+  /* border: 1px solid black; */
+  padding-top: 10px;
 }
 
-#profile-main .profile-pic {
+#profile-main img {
   border-radius: 180%;
   background: rgb(241, 173, 173);
   width: 250px;
@@ -87,6 +89,28 @@
 }
 #profile-main .bio p {
   margin-bottom: 3.7px;
+}
+
+hr {
+  margin: 3em;
+  color: rgb(241, 173, 173);
+}
+
+/*************** Followers/Following **********/
+
+#profile-wrapper {
+  display:flex;
+  justify-content: space-around;
+
+}
+
+.profile-follows {
+  margin: 10px 2em;
+}
+
+.profile-h3 {
+  margin: 1em 0;
+  text-align: center;
 }
 
 

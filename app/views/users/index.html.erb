@@ -19,12 +19,22 @@
         </nav>
       </header>
       <main id="browse-main">
-        <% @users.each do |user|%>
+        <% @users.reject {|u| u == @current_user}.each do |user|%>
           <div class="profile-dash">
+
+
             <div class="icon">
-              <%= link_to image_tag 'rick.png', class:"browse-profile-pic" %>
+              <% if user.picture.attached? %>
+               
+               <%= link_to image_tag(url_for(user.picture)), user%>
+              <% else %>
+                <%=link_to image_tag('rick.png'), user %>
+              <% end %>
+
+          
+
               <p><%= user.name %></p>
-              <p>Interstellar</p>
+              <p><%= user.location %></p>
             </div>
           </div>
         <%end%>
