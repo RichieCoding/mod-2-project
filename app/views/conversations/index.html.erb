@@ -1,21 +1,51 @@
-<div class="ui segment">
-  <h3>Your Inbox</h3>
-  <br>
-  <div class="ui list">
-    <div class="item">
-      <% @conversations.each do |conversation| %>
-        <% if conversation.sender_id == @current_user.id || conversation.recipient_id == @current_user.id %>
-          <% if conversation.sender_id == @current_user.id %>
-            <% recipient = User.find(conversation.recipient_id) %>
-          <% else %>
-            <% recipient = User.find(conversation.sender_id) %>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="../assets/stylesheets/profile.css">
+  <link href="https://fonts.googleapis.com/css?family=Emilys+Candy|Open+Sans|Racing+Sans+One&display=swap" rel="stylesheet">
+  <title>Profile</title>
+</head>
+<body id="profile-body">
+  <header id="profile-header">
+    <h1 id="title">oKStupid</h1>
+    <nav>
+      <ul>
+
+        <li><a href="#" id="match">Match Me</a></li>
+        <li><%= link_to "Inbox", conversations_path %></li>
+
+        <li><%= link_to "Profile", user_path(@current_user) %></li>
+        <li><%= link_to "Browse", users_path %></li>
+        <li><%= link_to "Log Out", "/login", method: :delete %></li>
+      </ul>
+    </nav>
+  </header>
+  <main id="profile-main">
+    <div class="ui-segment">
+      <h3>Your Inbox</h3> <br> <hr>
+      <div class="ui-list">
+        <div class="item">
+          <% @conversations.each do |conversation| %>
+            <% if conversation.sender_id == @current_user.id || conversation.recipient_id == @current_user.id %>
+              <% if conversation.sender_id == @current_user.id %>
+                <% recipient = User.find(conversation.recipient_id) %>
+              <% else %>
+                <% recipient = User.find(conversation.sender_id) %>
+            <% end %>
+              <div class="message-icon">
+                <%= link_to recipient.name, conversation_messages_path(conversation)%>
+              </div>
+            <% end %>
           <% end %>
-            <li>
-              <%= link_to recipient.name, conversation_messages_path(conversation)%>
-            </li>
-        <% end %>
-      <% end %>
-    </div>
-  </div>
-  <br><p><%= link_to "Go back", users_path %>
-</div>
+        </div> <!-- End of class item div -->
+      </div> <!-- End of ui list div -->
+    <br><p><%= link_to "Go back", user_path(@current_user) %>
+  </div> <!-- End of ui-segment div -->
+
+  </main> <!-- End of main div -->
+</body>
+</html>
+
+

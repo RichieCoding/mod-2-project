@@ -89,4 +89,5 @@ ul li a:hover {
   width: 50px;
   bottom: 20px;
   right: 30px;
+  opacity: 0.6;
 }
