@@ -3,18 +3,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-   <link href="https://fonts.googleapis.com/css?family=Emilys+Candy|Open+Sans|Racing+Sans+One&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Emilys+Candy|Open+Sans|Racing+Sans+One&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/create_new.css">
-  <title>Create Profile</title>
+  <title>Edit Profile</title>
 </head>
 <body id="new-body">
   <header id="new-header">
-    <h1 id="new-title">oKStupid</h1>
+    <h1 id="new-title">Edit Profile</h1>
   </header>
   <main id="new-main">
       <%= form_for @user do |f| %>
-        <%= f.label "Profile Photo" %> <br>
-        <%= f.file_field :picture %> <br>
         <%= f.label :name %> <br>
         <%= f.text_field :name %> <br>
         <%= f.label :age %> <br>
@@ -32,4 +30,3 @@
   </main>
 </body>
 </html>
-

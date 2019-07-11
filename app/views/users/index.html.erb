@@ -20,7 +20,7 @@
         </nav>
       </header>
       <main id="browse-main">
-        <% @users.reject {|u| u == @current_user}.each do |user|%>
+        <% @users.reject {|u| u == @current_user}.shuffle.each do |user|%>
           <div class="profile-dash">
 
 
@@ -39,6 +39,12 @@
             </div>
           </div>
         <%end%>
+        
+        
+        
       </main>
+      <div id="browse-top-div">
+        <%= link_to image_tag('arrow.png') %>
+      </div>
 </body>
 </html>

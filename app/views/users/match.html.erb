@@ -1,0 +1,29 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Browse</title>
+  <link rel="stylesheet" href="css/browse.css">
+</head>
+<body id="browse-body">
+    <header id="browse-header">
+        <%if @user.name == "Rick Sanchez"%>
+          <h1 id="browse-title">Sorry</h1>
+        <% else %>
+          <h1 id="browse-title">Matched</h1>
+        <%end%>
+        <nav>
+          <ul>
+            <li><a href="#" id="match">Matched</a></li>
+            <li><%= link_to "Profile", user_path(@current_user) %></li>
+            <li><%= link_to "Browse", users_path %></li>
+            <li><%= link_to "Log Out", "/login", method: :delete %></li>
+          </ul>
+        </nav>
+      </header>
+      <main id="browse-main">
+        <%= @user.name %>
+      </main>
+</body>
+</html>

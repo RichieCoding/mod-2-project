@@ -62,7 +62,10 @@ ul li a:hover {
 .profile-dash {
   margin: 3em 2.5em 2em;
   /* border: 1px black solid; */
-  
+}
+
+.profile-dash img:hover {
+  transform: rotateZ(-20deg);
 }
 
 .profile-dash p {
@@ -70,7 +73,7 @@ ul li a:hover {
   margin-bottom: 5px;
 }
 
-img {
+#browse-main img {
   width: 150px;
   border-radius: 180%;
   background: rgb(223,155,155);
@@ -79,4 +82,11 @@ img {
 
 .icon {
   display: inline-block;
+}
+
+#browse-top-div img {
+  position: fixed;
+  width: 50px;
+  bottom: 20px;
+  right: 30px;
 }

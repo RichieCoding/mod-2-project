@@ -70,6 +70,10 @@
   margin-bottom: 1em;
 }
 
+.button-div {
+  text-align: center;
+}
+
 #follow-button {
   height: 2.5em;
   width: 7em;
@@ -78,8 +82,23 @@
   border-radius: 20px;
 }
 
-#button-div {
-  text-align: center;
+#profile-container a {
+  border: 1px solid rgb(241, 173, 173);
+  height: 2.5em;
+  width: 7em;
+  outline: none;
+  font-size: 1em;
+  border-radius: 20px;
+  padding: 10px 20px;
+}
+
+#profile-container a:hover {
+  background-color: rgb(241, 173, 173);
+}
+
+
+#profile-container a:visited {
+  color: rgb(74, 94, 184);
 }
 
 #profile-main .bio {
@@ -97,6 +116,28 @@ hr {
 }
 
 /*************** Followers/Following **********/
+
+#hello-follow {
+  display: flex;
+  justify-content: space-around;
+}
+
+#profile-container input {
+  border: 1px solid rgb(241, 173, 173);
+  height: 2.5em;
+  width: 7em;
+  outline: none;
+  font-size: 1em;
+  border-radius: 20px;
+  padding: 10px 20px;
+  color: rgb(74, 94, 184);
+}
+
+#profile-container input:hover {
+  background-color: rgb(241, 173, 173);
+}
+
+
 
 #profile-wrapper {
   display:flex;
