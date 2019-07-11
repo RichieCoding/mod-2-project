@@ -1,0 +1,39 @@
+.message-box {
+  margin: 0 auto 1.5em;
+  padding: 1em;
+  border: 4px solid rgb(223,155,155);
+  border-image:
+      linear-gradient(to bottom, rgb(223,155,155), rgba(105, 120, 185, 10)) 1 100%;
+  height: 35vh;
+  width: 55%;
+  color: rgb(55, 79, 185);
+  overflow: auto;
+  border-radius: 20px;
+}
+
+
+.reply-box {
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+}
+
+#profile-main textarea {
+  height: 125px;
+  width: 300px;
+}
+
+.user-blah {
+  text-align: right;
+  color: rgb(226, 148, 148);
+  padding: 0 0 12px;
+  
+}
+
+.receiver-blah {
+  padding: 0 0 12px;
+}
+
+strong {
+  text-align: right;
+}

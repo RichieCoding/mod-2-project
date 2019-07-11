@@ -1,36 +1,70 @@
-<% if @over_ten %>
-   <%= link_to 'Show Previous', '?m=all' %>
-<% end %>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="../assets/stylesheets/profile.css">
+  <link href="https://fonts.googleapis.com/css?family=Emilys+Candy|Open+Sans|Racing+Sans+One&display=swap" rel="stylesheet">
+  <title>Profile</title>
+</head>
+<body id="profile-body">
+  <header id="profile-header">
+    <h1 id="title">oKStupid</h1>
+    <nav>
+      <ul>
+        <li><a href="#" id="match">Match Me</a></li>
+        <li><%= link_to "Inbox", conversations_path %></li>
+        <li><%= link_to "Profile", user_path(@current_user) %></li>
+        <li><%= link_to "Browse", users_path %></li>
+        <li><%= link_to "Log Out", "/login", method: :delete %></li>
+      </ul>
+    </nav>
+  </header>
 
-<div class="ui segment">
-  <% @messages.each do |message| %>
-    <% if message.body %>
-      <% user = User.find(message.user_id) %>
-      <div class="item">
-        <div class="content">
-          <div class="header"><strong><%= user.name %></strong> <%= message.message_time %></div>
-          <div class="list">
-            <div class="item">
-              <i class="right triangle icon"></i>
-              <%= message.body %>
-            </div>
+  <main id="profile-main">
+    <div class="message-box">
+      <% if @over_ten %>
+        <%= link_to 'Show Previous', '?m=all' %>
+      <% end %>
+
+     <% @messages.each do |message| %>
+       <% if message.body %>
+       <% user = User.find(message.user_id) %>
+        <div class="item">
+          <div class="content">
+            <%if user == @current_user%>
+              <div class="user-blah"><strong><%= @current_user.name %></strong> <%= message.message_time %><br><%= message.body %></div>
+            <% else %>
+              <div class="receiver-blah"><strong><%= user.name %></strong> <%= message.message_time %><br> <%= message.body %></div>
+            <% end %>
+            
+           
           </div>
         </div>
-      </div>
+      <% end %>
     <% end %>
+  </div>
+  <div class="reply-box">
+  <%= form_for [@conversation, @message], html: {class: "ui reply form"} do |f| %>
+    <div class="field">
+      <%= f.text_area :body, class: "form-control" %>
+    </div>
+      <%= f.text_field :user_id, value: @current_user.id, type: "hidden"  %>
+    <div>
+      <%= f.submit "Add Reply", class: "ui blue labeled submit icon button" %>
+    </div>
+
   <% end %>
-</div>
+    </div>
+  </main> <!-- End of main div -->
 
-<%= form_for [@conversation, @message], html: {class: "ui reply form"} do |f| %>
-  <div class="field">
-    <%= f.text_area :body, class: "form-control" %>
-  </div>
-    <%= f.text_field :user_id, value: @current_user.id, type: "hidden"  %>
-  <div>
-    <%= f.submit "Add Reply", class: "ui blue labeled submit icon button" %>
-  </div>
+</body>
+</html>
 
-<% end %>
-<p>
+
+
+
+
+
 
 <p><%= link_to "This person is giving me the creeps. Take me back home.", users_path %>
