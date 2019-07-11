@@ -4,14 +4,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="../assets/stylesheets/profile.css">
+  <link href="https://fonts.googleapis.com/css?family=Emilys+Candy|Open+Sans|Racing+Sans+One&display=swap" rel="stylesheet">
   <title>Profile</title>
 </head>
 <body id="profile-body">
   <header id="profile-header">
-    <h1 id="title">oKupid</h1>
+    <h1 id="title">oKStupid</h1>
     <nav>
       <ul>
-        <li><a href="#" id="match">Match Me</a></li>
+        <li><%= link_to "Match Me" %></li>
         <li><%= link_to "Profile", user_path(@current_user) %></li>
         <li><%= link_to "Browse", users_path %></li>
         <li><%= link_to "Log Out", "/login", method: :delete %></li>
@@ -26,10 +27,27 @@
         <% else %>
           <%= image_tag 'rick.png', class:"profile-pic" %>
         <% end %>
-        <% if user_path(@user) != user_path(@current_user)%>
-          <div id="button-div">
-            <button id="follow-button"> Follow </button>
+        <div id="hello-follow">
+        <% if user_path(@user) != user_path(@current_user)%> 
+          <% if @user.followers.include?(@current_user) %>
+            <div class="button-div">
+              <%= button_to "Unfollow", "/follows/#{@user.id}", method: :delete %>
+            </div> <!-- End of Unfollow button -->
+          <% else %>
+              <div class="button-div">
+              <%= button_to "Follow", "/follows/#{@user.id}" %>
+            </div> <!-- End of follow button -->
+          <% end %>
+          <div class="button-div">
+          <%= button_to "Message" %>
           </div>
+        <% end %>
+        
+        </div>
+        <% if user_path(@user) == user_path(@current_user) %>
+          <div class="button-div">
+            <%= link_to "Edit Profile", edit_user_path%>
+          </div> <!-- End of follow button -->
         <% end %>
     </div>  
       <div class="bio">

@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :authorized, only: [:index, :show]
+  before_action :authorized, only: [:index, :show, :edit, :update, :destroy]
 
   def index
     @users = User.all
@@ -21,6 +21,19 @@ class UsersController < ApplicationController
     else
       redirect_to new_user_path
     end
+  end
+
+  def edit
+      @user = @current_user
+  end
+
+  def update
+    @current_user.update(user_params)
+    redirect_to user_path(@current_user)
+  end
+
+  def match
+    @user = @current_user.match
   end
 
 

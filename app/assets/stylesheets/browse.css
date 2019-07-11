@@ -62,7 +62,10 @@ ul li a:hover {
 .profile-dash {
   margin: 3em 2.5em 2em;
   /* border: 1px black solid; */
-  
+}
+
+.profile-dash img:hover {
+  transform: rotateZ(-20deg);
 }
 
 .profile-dash p {

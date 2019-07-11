@@ -15,6 +15,13 @@ class ApplicationController < ActionController::Base
       return redirect_to login_path 
     end 
   end 
-  
-  
+
+  def correct_user
+    @post = Post.find_by(id: params[:id])
+    unless current_user?(@post.user)
+      redirect_to user_path(current_user)
+    end
+  end
+
+
 end

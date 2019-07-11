@@ -13,8 +13,42 @@ class User < ApplicationRecord
 
   validates_uniqueness_of :username
 
+  
 
+  def match
+
+    @best_match = nil
+    @best_match_score = 0
+    User.all.reject {|u| u == self}.each do |user| 
+      # luck_number = rand(20)
+      score = 0
+      if user.age == self.age
+        score += 10
+      end
+      if user.location == self.location
+        score += 30
+      end
+      if user.bio == self.bio
+        score += 100
+      end
+     
+      if @best_match_score < score
+        @best_match_score = score
+        @best_match = user
+      end
+    end
+    if @best_match == nil
+      @best_match = User.find_by(name: "Rick Sanchez")
+      return @best_match
+    else
+      return @best_match
+    end
+  end
+
+ 
+  
 
   
+
 
 end
