@@ -46,7 +46,7 @@
         </div>
         <% if user_path(@user) == user_path(@current_user) %>
           <div class="button-div">
-            <%= link_to "Edit Profile", edit_user_path%>
+            <%= button_to "Edit Profile", edit_user_path, method: :get %>
           </div> <!-- End of follow button -->
         <% end %>
     </div>  

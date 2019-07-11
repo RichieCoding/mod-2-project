@@ -73,7 +73,7 @@ ul li a:hover {
   margin-bottom: 5px;
 }
 
-img {
+#browse-main img {
   width: 150px;
   border-radius: 180%;
   background: rgb(223,155,155);
@@ -82,4 +82,11 @@ img {
 
 .icon {
   display: inline-block;
+}
+
+#browse-top-div img {
+  position: fixed;
+  width: 50px;
+  bottom: 20px;
+  right: 30px;
 }

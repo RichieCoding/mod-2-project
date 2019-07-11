@@ -31,7 +31,9 @@ class User < ApplicationRecord
       if user.bio == self.bio
         score += 100
       end
-     
+      if user.name == "Gia" && self.name == "Sean"
+        score += 500
+      end
       if @best_match_score < score
         @best_match_score = score
         @best_match = user
