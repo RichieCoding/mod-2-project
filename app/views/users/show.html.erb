@@ -12,7 +12,10 @@
     <h1 id="title">oKStupid</h1>
     <nav>
       <ul>
-        <li><%= link_to "Match Me" %></li>
+
+        <li><a href="#" id="match">Match Me</a></li>
+        <li><%= link_to "Inbox", conversations_path %></li>
+
         <li><%= link_to "Profile", user_path(@current_user) %></li>
         <li><%= link_to "Browse", users_path %></li>
         <li><%= link_to "Log Out", "/login", method: :delete %></li>
@@ -42,12 +45,13 @@
           <%= button_to "Message" %>
           </div>
         <% end %>
-        
+
         </div>
         <% if user_path(@user) == user_path(@current_user) %>
           <div class="button-div">
             <%= button_to "Edit Profile", edit_user_path, method: :get %>
           </div> <!-- End of follow button -->
+
         <% end %>
     </div>  
       <div class="bio">
@@ -74,6 +78,14 @@
       </div> <!-- End of following div -->
       <% end %>
     </div> <!-- End of profile-wrapper div -->
+
+        
+
+    
+  
+  </div>
+
+
   </main>
 </body>
 </html>

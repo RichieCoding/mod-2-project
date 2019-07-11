@@ -2,7 +2,11 @@ class ConversationsController < ApplicationController
   
   def index 
     @users = User.all 
-    @conversations = Conversation.all 
+    @conversations = @current_user.filtered_conversations
+  end 
+
+  def show 
+    @user = User.find(params[:id])
   end 
 
   def create
@@ -13,6 +17,9 @@ class ConversationsController < ApplicationController
     end
     redirect_to conversation_messages_path(@conversation)
   end
+
+  def destroy
+  end 
 
 private 
 

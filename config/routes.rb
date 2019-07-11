@@ -8,15 +8,16 @@ Rails.application.routes.draw do
   post "/login", to: "login#create"
   delete "/login", to: "login#destroy"
 
-  resources :conversations do
+  resources :conversations, path: "/inbox" do
     resources :messages
   end
+
 
   post "/follows/:id", to: "follows#chicken" 
 
   delete "follows/:id", to: "follows#delete"
 
-  
+ 
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

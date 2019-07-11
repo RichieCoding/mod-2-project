@@ -7,6 +7,8 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @users = User.all
+    @conversations = Conversation.all
   end
 
   def new
@@ -14,7 +16,6 @@ class UsersController < ApplicationController
   end
 
   def create
-
     @user = User.create(user_params)
     if @user.valid?
       redirect_to user_path(@user)

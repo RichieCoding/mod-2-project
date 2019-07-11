@@ -1,6 +1,6 @@
 <div class="ui segment">
-  <h3>Mailbox</h3>
-
+  <h3>Your Inbox</h3>
+  <br>
   <div class="ui list">
     <div class="item">
       <% @conversations.each do |conversation| %>
@@ -10,23 +10,12 @@
           <% else %>
             <% recipient = User.find(conversation.sender_id) %>
           <% end %>
-          <%= link_to recipient.name, conversation_messages_path(conversation)%>
+            <li>
+              <%= link_to recipient.name, conversation_messages_path(conversation)%>
+            </li>
         <% end %>
       <% end %>
     </div>
   </div>
-</div>
-
-
-<div class="ui segment">
-  <h3>All Users</h3>
-  <div class="ui list">
-    <% @users.each do |user| %>
-      <% if user.id != @current_user.id %>
-      <div class="item">
-        <%= user.name %> <%= link_to 'Message me!', conversations_path(sender_id: @current_user.id, recipient_id: user.id), method: 'post'%>
-      </div>
-      <% end %>
-    <% end %>
-  </div>
+  <br><p><%= link_to "Go back", users_path %>
 </div>
