@@ -12,7 +12,7 @@
     <h1 id="title">oKStupid</h1>
     <nav>
       <ul>
-        <li><a href="#" id="match">Match Me</a></li>
+        <li><%= link_to "Match Me", match_path(@current_user) %></li>
         <li><%= link_to "Inbox", conversations_path %></li>
         <li><%= link_to "Profile", user_path(@current_user) %></li>
         <li><%= link_to "Browse", users_path %></li>
@@ -53,7 +53,7 @@
     <div>
       <%= f.submit "Add Reply", class: "ui blue labeled submit icon button" %>
     </div>
-
+    <p><%= link_to "Back to Inbox", "/inbox" %></p>
   <% end %>
     </div>
   </main> <!-- End of main div -->
@@ -67,4 +67,3 @@
 
 
 
-<p><%= link_to "This person is giving me the creeps. Take me back home.", users_path %>

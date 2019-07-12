@@ -39,3 +39,8 @@
 .message-icon a:hover {
   background-color: rgb(241, 173, 173);
 }
+
+.ui-segment h3 {
+  font-family: 'Open Sans', sans-serif;
+
+}

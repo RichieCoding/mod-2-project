@@ -3,27 +3,40 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://fonts.googleapis.com/css?family=Emilys+Candy|Open+Sans|Racing+Sans+One&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
   <title>Browse</title>
   <link rel="stylesheet" href="css/browse.css">
 </head>
 <body id="browse-body">
     <header id="browse-header">
         <%if @user.name == "Rick Sanchez"%>
-          <h1 id="browse-title">Sorry</h1>
+          <h1 id="match-title">Sorry</h1>
         <% else %>
           <h1 id="browse-title">Matched</h1>
         <%end%>
         <nav>
           <ul>
             <li><a href="#" id="match">Matched</a></li>
+            <li><%= link_to "Inbox", conversations_path %></li>
             <li><%= link_to "Profile", user_path(@current_user) %></li>
             <li><%= link_to "Browse", users_path %></li>
             <li><%= link_to "Log Out", "/login", method: :delete %></li>
           </ul>
         </nav>
       </header>
-      <main id="browse-main">
-        <%= @user.name %>
+      <main id="match-main">
+        <div class="match-name">
+          <h3> <%= @user.name %> </h3>
+        </div>
+        <div class="match-picture">
+          <% if @user.picture.attached? %>
+            <%= link_to image_tag(url_for(@user.picture)), @user%>
+          <% else %>
+            <%=link_to image_tag('rick.png'), @user %>
+          <% end %>
+        </div>
+        
       </main>
 </body>
 </html>

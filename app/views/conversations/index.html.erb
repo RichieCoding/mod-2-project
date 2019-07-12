@@ -13,7 +13,7 @@
     <nav>
       <ul>
 
-        <li><a href="#" id="match">Match Me</a></li>
+        <li><%= link_to "Match Me", match_path(@current_user) %></li>
         <li><%= link_to "Inbox", conversations_path %></li>
 
         <li><%= link_to "Profile", user_path(@current_user) %></li>

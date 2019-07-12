@@ -64,8 +64,9 @@
 }
 
 #profile-main img {
-  border-radius: 180%;
+  border-radius: 50%;
   background: rgb(241, 173, 173);
+  height: 250px;
   width: 250px;
   margin-bottom: 1em;
 }

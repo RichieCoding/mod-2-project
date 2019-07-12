@@ -11,7 +11,7 @@
   background: linear-gradient(160deg, rgba(223,155,155,0.9766281512605042) 0%, rgba(255,122,114,1) 60%, rgba(250,88,78,1) 95%);
 }
 
-#browse-body h1 {
+#browse-header h1 {
   font-size: 5em;
   text-align: center;
   margin-bottom: 20px;
@@ -19,6 +19,7 @@
   background: -webkit-linear-gradient(rgb(74, 94, 184), rgb(42, 64, 158));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  font-family: 'Emilys Candy', cursive;
 }
 
 
@@ -75,6 +76,7 @@ ul li a:hover {
 
 #browse-main img {
   width: 150px;
+  height: 150px;
   border-radius: 180%;
   background: rgb(223,155,155);
   margin-bottom: 15px;

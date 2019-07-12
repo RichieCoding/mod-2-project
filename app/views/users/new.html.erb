@@ -21,6 +21,8 @@
         <%= f.text_field :age %> <br>
         <%= f.label :location %> <br>
         <%= f.text_field :location %> <br>
+        <%= f.label :horoscope %> <br>
+        <%= f.select :horoscope, ["Aries", "Taurus", "Gemini", "Cancer", "Leo", "Virgo", "Libra", "Scorpio", "Sagittarius", "Capicorn", "Aquarius", "Pisces"].sort %> <br>
         <%= f.label :bio %> <br>
         <%= f.text_area :bio %> <br>
         <%= f.label :username %> <br>

@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   delete "/login", to: "login#destroy"
 
   resources :conversations, path: "/inbox" do
-    resources :messages
+  resources :messages
   end
 
 

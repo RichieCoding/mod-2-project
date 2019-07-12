@@ -1,0 +1,30 @@
+
+
+#match-main {
+  width: 65%;
+  margin: 0 auto;
+}
+
+#match-main h3 {
+  font-family: 'Open Sans', sans-serif;
+
+
+}
+
+.match-picture {
+  display: flex;
+  justify-content: space-around;
+  margin: 20px auto;
+}
+
+.match-picture img {
+  border-radius: 50%;
+  height: 20em;
+  width: 20em;
+}
+
+.match-name {
+  margin: 1em;
+  font-size: 2em;
+  text-align: center;
+}

@@ -43,8 +43,44 @@ end
       if user.bio == self.bio
         score += 100
       end
-      if user.name == "Gia" && self.name == "Sean"
-        score += 500
+      if user.horoscope == "Aries" && self.horoscope == "Leo" || self.horoscope == "Sagiittarus" 
+        score += 30
+      end
+      if user.horoscope == "Aries" && self.horoscope == "Leo" || self.horoscope == "Sagiittarus" 
+        score += 30
+      end
+      if user.horoscope == "Taurus" && self.horoscope == "Capricorn" || self.horoscope == "Virgo" 
+        score += 30
+      end
+      if user.horoscope == "Gemini" && self.horoscope == "Aquarius" || self.horoscope == "Libra" 
+        score += 30
+      end
+      if user.horoscope == "Cancer" && self.horoscope == "Scorpio" || self.horoscope == "Pisces" 
+        score += 30
+      end
+      if user.horoscope == "Leo" && self.horoscope == "Sagittarius" || self.horoscope == "Aries" 
+        score += 30
+      end
+      if user.horoscope == "Virgo" && self.horoscope == "Capricorn" || self.horoscope == "Taurus" 
+        score += 30
+      end
+      if user.horoscope == "Libra" && self.horoscope == "Gemini" || self.horoscope == "Aquarius" 
+        score += 30
+      end
+      if user.horoscope == "Scorpio" && self.horoscope == "Pisces" || self.horoscope == "Cancer" 
+        score += 30
+      end
+      if user.horoscope == "Sagittarius" && self.horoscope == "Leo" || self.horoscope == "Aries" 
+        score += 30
+      end
+      if user.horoscope == "Capricorn" && self.horoscope == "Taurus" || self.horoscope == "Virgo" 
+        score += 30
+      end
+      if user.horoscope == "Aquarius" && self.horoscope == "Gemini" || self.horoscope == "Libra" 
+        score += 30
+      end
+      if user.horoscope == "Pisces" && self.horoscope == "Scorpio" || self.horoscope == "Cancer" 
+        score += 30
       end
       if @best_match_score < score
         @best_match_score = score
@@ -58,12 +94,5 @@ end
       return @best_match
     end
   end
-
- 
-  
-
-
-  
-
 
 end

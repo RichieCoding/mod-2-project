@@ -3,15 +3,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://fonts.googleapis.com/css?family=Emilys+Candy|Open+Sans|Racing+Sans+One&display=swap" rel="stylesheet">
   <title>Browse</title>
   <link rel="stylesheet" href="css/browse.css">
 </head>
 <body id="browse-body">
     <header id="browse-header">
-        <h1 id="browse-title">Browse</h1>
+        <h1 id="title">oKStupid</h1>
         <nav>
           <ul>
-            <li><a href="#" id="match">Match Me</a></li>
+            <li><%= link_to "Match Me", match_path(@current_user) %></li>
             <li><%= link_to "Inbox", conversations_path %></li>
             <li><%= link_to "Profile", user_path(@current_user) %></li>
             <li><%= link_to "Browse", users_path %></li>
