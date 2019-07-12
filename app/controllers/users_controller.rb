@@ -2,7 +2,8 @@ class UsersController < ApplicationController
   before_action :authorized, only: [:index, :show, :edit, :update, :destroy]
 
   def index
-    @users = User.all
+    # @users = User.all
+    @users = User.search(params[:search])
   end
 
   def show
@@ -41,7 +42,7 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:name, :username, :password, :age, :location, :bio, :picture, :horoscope)
+    params.require(:user).permit(:name, :username, :password, :age, :location, :bio, :picture, :horoscope, :search)
   end
 
 

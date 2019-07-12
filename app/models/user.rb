@@ -14,6 +14,19 @@ class User < ApplicationRecord
 
   validates_uniqueness_of :username
 
+  def self.search(search)
+    if search
+      user = User.find_by(name: search)
+      if user 
+        self.where(name: user.name)
+      else
+        User.all
+      end
+    else
+      User.all
+    end
+  end
+
 
 def conversations 
   self.sent_convos + self.received_convos
@@ -34,6 +47,9 @@ end
     User.all.reject {|u| u == self}.each do |user| 
       # luck_number = rand(20)
       score = 0
+      if user.name[0] == self.name[0]
+        score += 10
+      end
       if user.age == self.age
         score += 10
       end
@@ -42,6 +58,9 @@ end
       end
       if user.bio == self.bio
         score += 100
+      end
+      if user.bio.split(" ").include?("love") == self.bio.split(" ").include?("love") 
+        score += 30
       end
       if user.horoscope == "Aries" && self.horoscope == "Leo" || self.horoscope == "Sagiittarus" 
         score += 30

@@ -21,6 +21,13 @@
         </nav>
       </header>
       <main id="browse-main">
+      <div id="search-bar">
+      <%= form_tag(users_path, method: :get) do  %>
+        <%= text_field_tag(:search, params[:search])%>
+        <%= submit_tag ("Search")%>
+      <% end %>
+      </div>
+      <div id="picture-grid">
         <% @users.reject {|u| u == @current_user}.shuffle.each do |user|%>
           <div class="profile-dash">
 
@@ -40,6 +47,7 @@
             </div>
           </div>
         <%end%>
+        </div>
         
         
         
