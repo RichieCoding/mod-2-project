@@ -1,11 +1,12 @@
 # README
 
-An app where you can login/signup. You can view other users and their profiles. You can follow them and message them. There is also a quick and easy matching feature.
+A dating app where you can login/signup. You can view other users and their profiles. You can follow them and message them. There is also a quick and easy matching feature.
 
 Technologies:
 -- Ruby on Rails
 -- Active Storage
 -- SQLite
+-- BCrypt
 -- CSS
 
 Want to run the app on your local machine?
