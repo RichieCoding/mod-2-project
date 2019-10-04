@@ -9,8 +9,8 @@ class User < ApplicationRecord
   has_many :following_users, foreign_key: :followee_id, class_name: 'Follow'
   has_many :followers, through: :following_users
 
-  has_many :sent_convos, class_name: "Conversation", foreign_key: :sender_id
-  has_many :received_convos, class_name: "Conversation", foreign_key: :recipient_id
+  has_many :sent_convos, class_name: "Conversation", foreign_key: :sender_id, dependent: :destroy
+  has_many :received_convos, class_name: "Conversation", foreign_key: :recipient_id, dependent: :destroy
 
   validates_uniqueness_of :username
 
@@ -100,6 +100,12 @@ end
       end
       if user.horoscope == "Pisces" && self.horoscope == "Scorpio" || self.horoscope == "Cancer" 
         score += 30
+      end
+      if user.name == "Richie" && self.name = "Emily" 
+        score += 10000
+      end
+      if user.name = "Emily" && self.name = "Richie"
+        score += 9999999
       end
       if @best_match_score < score
         @best_match_score = score
