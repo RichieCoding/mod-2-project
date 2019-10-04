@@ -1,24 +1,18 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A dating app where you can login/signup. You can view other users and their profiles. You can follow them and message them. There is also a quick and easy matching feature.
 
-Things you may want to cover:
+Technologies:
+-- Ruby on Rails
+-- Active Storage
+-- SQLite
+-- BCrypt
+-- CSS
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Want to run the app on your local machine?
+1. Fork this repository.
+2. Clone it down to you local machine.
+3. Run:
+    - bundle install
+    - rails db:migrate && rails db:seed
+    - rails s
